@@ -12,7 +12,7 @@ var indexRouter = require('./routes/index');
 require("dotenv").config();
 
 // Database Connection
-require("./config/database");
+// require("./config/database");
 
 var app = express();
 app.use(fileUpload());
