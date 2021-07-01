@@ -3,6 +3,10 @@ const accountSid = 'ACa3431b4db40dfc4ef2ac4a1a3394cc1a';
 // const authToken = process.env.TWILIO_ACCOUNT_AUTHTOKEN;
 const authToken = 'e3977fb7f3eaec37165c92802b84ea75';
 const client = require('twilio')(accountSid, authToken);
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
+
 
 const sendCode = async (req) => {
     try {
@@ -29,6 +33,16 @@ const verifyCode = async (req) => {
                 .create({ to: req.body.phoneNumber, code: req.body.code })
                 .then(verification_check => {
                     console.log(verification_check.status)
+                    MongoClient.connect(url, function (err, db) {
+                        if (err) throw err;
+                        var dbo = db.db("camScannerDB");
+                        var myobj = { phone: req.body.phoneNumber, verified: true, createdAt: new Date(), subscribed: false, subscribedAt: '' };
+                        dbo.collection("camScannerCol").insertOne(myobj, function (err, res) {
+                            if (err) throw err;
+                            console.log("1 document inserted");
+                            db.close();
+                        });
+                    });
                     resolve({ type: 'success', message: `Verified`, data: verification_check.status })
                 });
         })
