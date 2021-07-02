@@ -2,7 +2,7 @@ const express = require("express");
 const Stripe = require('stripe')
 const { v4: uuidv4 } = require('uuid')
 
-const stripe = new Stripe('sk_test_51J6Y8PI6dOe5JEOcw9ueiU7TGLRuZOhb6vI5uzESeqN0Rl6iAA0kxvwS65xM0wgajGMbYOgnRNAemSC5ynAxeQ5N00l4uaSzgf')
+const stripe = new Stripe('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')
 const router = express.Router();
 
 router.post("/makePayment", async (req, res) => {
