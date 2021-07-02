@@ -18,9 +18,12 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.9",
     "mongoose": "^5.12.5",
     "morgan": "~1.9.1",
     "nodemailer": "^6.6.2",
-    "twilio": "^3.64.0"
+    "stripe": "^8.160.0",
+    "twilio": "^3.64.0",
+    "uuid": "^8.3.2"
   }
 }
