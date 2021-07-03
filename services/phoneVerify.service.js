@@ -1,14 +1,14 @@
 // const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const accountSid = 'ACa3431b4db40dfc4ef2ac4a1a3394cc1a';
+const accountSid = 'AC3088fdfb9705bfe178a5f439fed8269d';
 // const authToken = process.env.TWILIO_ACCOUNT_AUTHTOKEN;
-const authToken = 'e3977fb7f3eaec37165c92802b84ea75';
+const authToken = 'c5ab39c64ccc29d932ba255b5715401c';
 const client = require('twilio')(accountSid, authToken);
 
 const sendCode = async (req) => {
     try {
         console.log('Phone number...', req.body.phoneNumber)
         return new Promise((resolve, reject) => {
-            client.verify.services('VAc320f193aa50883c7ead2caa20f04cf1')
+            client.verify.services('VAfe017439e37f300dbf0686fe8a252ef0')
                 .verifications
                 .create({ to: req.body.phoneNumber, channel: 'sms' })
                 .then(verification => {
@@ -24,7 +24,7 @@ const sendCode = async (req) => {
 const verifyCode = async (req) => {
     try {
         return new Promise((resolve, reject) => {
-            client.verify.services('VAc320f193aa50883c7ead2caa20f04cf1')
+            client.verify.services('VAfe017439e37f300dbf0686fe8a252ef0')
                 .verificationChecks
                 .create({ to: req.body.phoneNumber, code: req.body.code })
                 .then(verification_check => {
