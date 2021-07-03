@@ -24,7 +24,7 @@ router.post("/sendinfo", async (req, res) => {
         from: req.body.email, // sender address
         to: 'haconstructions@hotmail.com', // list of receivers
         subject: "User Info", // Subject line
-        text: `Name : ${req.body.name}\Phone : ${req.body.phone}\nAddress : ${req.body.address}`
+        text: `Name : ${req.body.name}\nEmail : ${req.body.email}\nPhone : ${req.body.phone}\nAddress : ${req.body.address}`
     });
 
     res.send(info)
