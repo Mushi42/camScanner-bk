@@ -14,8 +14,8 @@ router.post("/sendinfo", async (req, res) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'musharaf42@gmail.com', // generated ethereal user
-            pass: 'yijpltidremhixwk', // generated ethereal password
+            user: 'haconstructions1976@gmail.com', // generated ethereal user
+            pass: 'nxqopikspxffxotx', // generated ethereal password
         },
     });
 
